@@ -1,0 +1,84 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="placar">
+  <div class="step1" *ngIf="step == 1">
+    {{ title }}
+    <input
+      class="nomeTimes"
+      placeholder="Digite o nome do time 1"
+      [(ngModel)]="nomeDoTime1"
+      type="text"
+    />
+    <input
+      class="nomeTimes"
+      placeholder="Digite o nome do time 2"
+      [(ngModel)]="nomeDoTime2"
+      type="text"
+    />
+    <button class="button-placar">Adicionar time</button>
+    <button class="button-placar" *ngIf="nomeDoTime1 && nomeDoTime2" (click)="iniciar()">Iniciar</button>
+  </div>
+  <div class="step2" *ngIf="step == 2">
+    <div class="dados-dos-times">
+      <span> {{ nomeDoTime1 }}: </span>
+      <span>
+        {{ pontosTime1 }}
+      </span>
+      <button (click)="adicionarPontosTime1()">
+        <span class="material-symbols-outlined"> add </span>
+      </button>
+      <button (click)="removerPontosTime1()">
+        <span class="material-symbols-outlined"> remove </span>
+      </button>
+    </div>
+    <br />
+
+    <div class="dados-dos-times">
+      <span> {{ nomeDoTime2 }}: </span>
+      <span>
+        {{ pontosTime2 }}
+      </span>
+      <button (click)="adicionarPontosTime2()">
+        <span class="material-symbols-outlined"> add </span>
+      </button>
+      <button (click)="removerPontosTime2()">
+        <span class="material-symbols-outlined"> remove </span>
+      </button>
+    </div>
+    <br />
+    <div class="finalizar-partida">
+      <button class="button-placar" (click)="finalizarPartida()">
+        Finalizar partida
+      </button>
+    </div>
+    <br>
+    <div class="reiniciar" (click)="zerarPontuacao()">
+      <button class="button-placar">Reiniciar Pontuação</button>
+    </div>
+    <br />
+    <div class="pagina-inicial">
+      <button class="button-placar" (click)="paginaInicial()">
+        Página Inicial
+      </button>
+    </div>
+    <br />
+  </div>
+
+  <div class="step3" *ngIf="step == 3">
+    <span *ngIf="nomeTimeVencedor"
+      >O time {{ nomeTimeVencedor }} venceu! Com
+      {{ pontosTimeVencedor }} pontos</span
+    >
+    <span *ngIf="!nomeTimeVencedor">Empate!</span>
+    <br />
+    <div class="pagina-inicial">
+      <button class="button-placar" (click)="paginaInicial()">
+        Página Inicial
+      </button>
+    </div>
+    <!-- <span>{{nomeDoTime1}}:</span>
+  <span>{{pontosTime1}}</span>
+  <br>
+  <span>{{nomeDoTime2}}</span>
+  <span>{{pontosTime2}}</span> -->
+  </div>
+</div>

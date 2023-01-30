@@ -1,0 +1,59 @@
+.placar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .button-placar {
+    border: 1px solid rgb(84, 83, 83);
+    border-radius: 8px;
+    background-color: rgba(201, 241, 241, 0.922);
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .step1 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    gap: 30px;
+    border: 15px groove white;
+    border-radius: 30px;
+    padding: 30px;
+
+    .nomeTimes {
+      width: 60%;
+      height: 32px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgb(84, 83, 83);
+      outline: none;
+      &::placeholder {
+        color: #5f6368bd;
+      }
+    }
+  }
+
+  .step2 {
+    .dados-dos-times {
+      display: flex;
+      border: 1px solid rgb(84, 83, 83);
+      border-radius: 8px;
+
+      span {
+        display: block;
+        width: auto;
+        height: 30px;
+        padding: 10px;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
