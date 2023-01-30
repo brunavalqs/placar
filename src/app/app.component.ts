@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Placar-Bruna';
+  title = 'Placar de Times';
   nomeDoTime1: any = '';
   nomeDoTime2: any = '';
   step = 1;
